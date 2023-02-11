@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="prometMagacinskeKartice">
+      <h2 data-cy="prometMagacinskeKarticeDetailsHeading"><span>Promet Magacinske Kartice</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.id }}</span>
+        </dd>
+        <dt><span>Datum Prometa</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.datumPrometa | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Kolicina</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.kolicina }}</span>
+        </dd>
+        <dt><span>Cena</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.cena }}</span>
+        </dd>
+        <dt><span>Vrednost</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.vrednost }}</span>
+        </dd>
+        <dt><span>Dokument</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.dokument }}</span>
+        </dd>
+        <dt><span>Smer</span></dt>
+        <dd>
+          <span>{{ prometMagacinskeKartice.smer }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/promet-magacinske-kartice', prometMagacinskeKartice.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

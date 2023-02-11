@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="popis">
+      <h2 data-cy="popisDetailsHeading"><span>Popis</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ popis.id }}</span>
+        </dd>
+        <dt><span>Datum Popisa</span></dt>
+        <dd>
+          <span>{{ popis.datumPopisa | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Broj Popisa</span></dt>
+        <dd>
+          <span>{{ popis.brojPopisa }}</span>
+        </dd>
+        <dt><span>Status Popisa</span></dt>
+        <dd>
+          <span>{{ popis.statusPopisa }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/popis', popis.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<div>
+  <h2 id="page-heading" data-cy="StavkaPrometnogDokumentaHeading">
+    <span>Stavka Prometnog Dokumentas</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-stavka-prometnog-dokumenta"
+        [routerLink]="['/stavka-prometnog-dokumenta/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Stavka Prometnog Dokumenta </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="stavkaPrometnogDokumentas?.length === 0">
+    <span>No Stavka Prometnog Dokumentas found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="stavkaPrometnogDokumentas && stavkaPrometnogDokumentas.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="kolicina">
+            <div class="d-flex">
+              <span>Kolicina</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cena">
+            <div class="d-flex">
+              <span>Cena</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vrednost">
+            <div class="d-flex">
+              <span>Vrednost</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stavkaPrometnogDokumenta of stavkaPrometnogDokumentas; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/stavka-prometnog-dokumenta', stavkaPrometnogDokumenta.id, 'view']">{{ stavkaPrometnogDokumenta.id }}</a>
+          </td>
+          <td>{{ stavkaPrometnogDokumenta.kolicina }}</td>
+          <td>{{ stavkaPrometnogDokumenta.cena }}</td>
+          <td>{{ stavkaPrometnogDokumenta.vrednost }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/stavka-prometnog-dokumenta', stavkaPrometnogDokumenta.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/stavka-prometnog-dokumenta', stavkaPrometnogDokumenta.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(stavkaPrometnogDokumenta)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="preduzece">
+      <h2 data-cy="preduzeceDetailsHeading"><span>Preduzece</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ preduzece.id }}</span>
+        </dd>
+        <dt><span>Naziv</span></dt>
+        <dd>
+          <span>{{ preduzece.naziv }}</span>
+        </dd>
+        <dt><span>Adresa</span></dt>
+        <dd>
+          <span>{{ preduzece.adresa }}</span>
+        </dd>
+        <dt><span>Telefon</span></dt>
+        <dd>
+          <span>{{ preduzece.telefon }}</span>
+        </dd>
+        <dt><span>Mib</span></dt>
+        <dd>
+          <span>{{ preduzece.mib }}</span>
+        </dd>
+        <dt><span>Pib</span></dt>
+        <dd>
+          <span>{{ preduzece.pib }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/preduzece', preduzece.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

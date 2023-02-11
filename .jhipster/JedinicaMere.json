@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130704",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jedinica_mere",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nazivJedinice",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "skraceniNaziv",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "JedinicaMere",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

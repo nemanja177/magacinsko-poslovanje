@@ -1,0 +1,109 @@
+entity Preduzece{
+	id Long,
+    naziv String,
+    adresa String,
+    telefon String,
+    mib String,
+    pib String
+}
+
+entity PoslovniPartner{
+	id Long,
+    ime String,
+    prezime String,
+    email String,
+    jmbg String,
+    adresa String
+}
+
+entity Radnik{
+	id Long,
+    ime String,
+    prezime String,
+    adresa String,
+    telefon String
+}
+
+entity Magacin{
+	id Long,
+    naziv String
+}
+
+entity Artikal{
+	id Long,
+    naziv String,
+    opis String,
+    pakovanje String
+}
+
+entity JedinicaMere{
+	id Long,
+	nazivJedinice String,
+    skraceniNaziv String
+}
+
+entity MagacinskaKartica{
+	id Long,
+    pocetnoStanjeKolicina Double,
+    prometUlazaKolicina Double,
+    prometIzlazaKolicina Double,
+    ukupnaKolicina Double,
+    pocetnoStanjeVrednosti Double,
+    prometUlazaVrednosti Double,
+    prometIzlazaVrednosti Double,
+    ukupnaVrednost Double
+}
+
+entity PoslovanGodina{
+	id Long,
+    godina Long,
+    zakljucena Boolean
+}
+
+entity Popis{
+	id Long,
+    datumPopisa LocalDate,
+    brojPopisa Long,
+    statusPopisa Boolean
+}
+
+entity StavkaPopisa{
+	id Long,
+    kolicinaPopisa Long,
+    kolicinaPoKnjigama Long
+}
+
+entity PrometMagacinskeKartice{
+	id Long,
+    datumPrometa LocalDate,
+    kolicina Long,
+    cena Long,
+    vrednost Long,
+    dokument String,
+    smer String   
+}
+
+entity AnalitickaMagacinskaKartica{
+	id Long,
+    datumPrometa LocalDate,
+    kolicina Long,
+    cena Long,
+    vrednost Long,
+    dokument String,
+    smer Boolean
+}
+
+entity StavkaPrometnogDokumenta{
+	id Long,
+    kolicina Long,
+    cena Long,
+    vrednost Long
+}
+
+entity PrometniDokument{
+	id Long,
+	brojDokumenata Long,
+    datum LocalDate,
+    vrsta String,
+    status String
+}

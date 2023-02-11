@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="prometniDokument">
+      <h2 data-cy="prometniDokumentDetailsHeading"><span>Prometni Dokument</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ prometniDokument.id }}</span>
+        </dd>
+        <dt><span>Broj Dokumenata</span></dt>
+        <dd>
+          <span>{{ prometniDokument.brojDokumenata }}</span>
+        </dd>
+        <dt><span>Datum</span></dt>
+        <dd>
+          <span>{{ prometniDokument.datum | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Vrsta</span></dt>
+        <dd>
+          <span>{{ prometniDokument.vrsta }}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+          <span>{{ prometniDokument.status }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/prometni-dokument', prometniDokument.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div>
+  <h2 id="page-heading" data-cy="PrometniDokumentHeading">
+    <span>Prometni Dokuments</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-prometni-dokument"
+        [routerLink]="['/prometni-dokument/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Prometni Dokument </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="prometniDokuments?.length === 0">
+    <span>No Prometni Dokuments found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="prometniDokuments && prometniDokuments.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="brojDokumenata">
+            <div class="d-flex">
+              <span>Broj Dokumenata</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="datum">
+            <div class="d-flex">
+              <span>Datum</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vrsta">
+            <div class="d-flex">
+              <span>Vrsta</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="status">
+            <div class="d-flex">
+              <span>Status</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prometniDokument of prometniDokuments; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/prometni-dokument', prometniDokument.id, 'view']">{{ prometniDokument.id }}</a>
+          </td>
+          <td>{{ prometniDokument.brojDokumenata }}</td>
+          <td>{{ prometniDokument.datum | formatMediumDate }}</td>
+          <td>{{ prometniDokument.vrsta }}</td>
+          <td>{{ prometniDokument.status }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/prometni-dokument', prometniDokument.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/prometni-dokument', prometniDokument.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(prometniDokument)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+<div>
+  <h2 id="page-heading" data-cy="PrometMagacinskeKarticeHeading">
+    <span>Promet Magacinske Kartices</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-promet-magacinske-kartice"
+        [routerLink]="['/promet-magacinske-kartice/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Promet Magacinske Kartice </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="prometMagacinskeKartices?.length === 0">
+    <span>No Promet Magacinske Kartices found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="prometMagacinskeKartices && prometMagacinskeKartices.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="datumPrometa">
+            <div class="d-flex">
+              <span>Datum Prometa</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="kolicina">
+            <div class="d-flex">
+              <span>Kolicina</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="cena">
+            <div class="d-flex">
+              <span>Cena</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="vrednost">
+            <div class="d-flex">
+              <span>Vrednost</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dokument">
+            <div class="d-flex">
+              <span>Dokument</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="smer">
+            <div class="d-flex">
+              <span>Smer</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prometMagacinskeKartice of prometMagacinskeKartices; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/promet-magacinske-kartice', prometMagacinskeKartice.id, 'view']">{{ prometMagacinskeKartice.id }}</a>
+          </td>
+          <td>{{ prometMagacinskeKartice.datumPrometa | formatMediumDate }}</td>
+          <td>{{ prometMagacinskeKartice.kolicina }}</td>
+          <td>{{ prometMagacinskeKartice.cena }}</td>
+          <td>{{ prometMagacinskeKartice.vrednost }}</td>
+          <td>{{ prometMagacinskeKartice.dokument }}</td>
+          <td>{{ prometMagacinskeKartice.smer }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/promet-magacinske-kartice', prometMagacinskeKartice.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/promet-magacinske-kartice', prometMagacinskeKartice.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(prometMagacinskeKartice)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="analitickaMagacinskaKartica">
+      <h2 data-cy="analitickaMagacinskaKarticaDetailsHeading"><span>Analiticka Magacinska Kartica</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.id }}</span>
+        </dd>
+        <dt><span>Datum Prometa</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.datumPrometa | formatMediumDate }}</span>
+        </dd>
+        <dt><span>Kolicina</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.kolicina }}</span>
+        </dd>
+        <dt><span>Cena</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.cena }}</span>
+        </dd>
+        <dt><span>Vrednost</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.vrednost }}</span>
+        </dd>
+        <dt><span>Dokument</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.dokument }}</span>
+        </dd>
+        <dt><span>Smer</span></dt>
+        <dd>
+          <span>{{ analitickaMagacinskaKartica.smer }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button
+        type="button"
+        [routerLink]="['/analiticka-magacinska-kartica', analitickaMagacinskaKartica.id, 'edit']"
+        class="btn btn-primary"
+      >
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

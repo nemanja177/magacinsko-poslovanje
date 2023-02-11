@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="magacinskaKartica">
+      <h2 data-cy="magacinskaKarticaDetailsHeading"><span>Magacinska Kartica</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.id }}</span>
+        </dd>
+        <dt><span>Pocetno Stanje Kolicina</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.pocetnoStanjeKolicina }}</span>
+        </dd>
+        <dt><span>Promet Ulaza Kolicina</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.prometUlazaKolicina }}</span>
+        </dd>
+        <dt><span>Promet Izlaza Kolicina</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.prometIzlazaKolicina }}</span>
+        </dd>
+        <dt><span>Ukupna Kolicina</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.ukupnaKolicina }}</span>
+        </dd>
+        <dt><span>Pocetno Stanje Vrednosti</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.pocetnoStanjeVrednosti }}</span>
+        </dd>
+        <dt><span>Promet Ulaza Vrednosti</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.prometUlazaVrednosti }}</span>
+        </dd>
+        <dt><span>Promet Izlaza Vrednosti</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.prometIzlazaVrednosti }}</span>
+        </dd>
+        <dt><span>Ukupna Vrednost</span></dt>
+        <dd>
+          <span>{{ magacinskaKartica.ukupnaVrednost }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/magacinska-kartica', magacinskaKartica.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

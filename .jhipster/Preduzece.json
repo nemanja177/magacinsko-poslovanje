@@ -1,0 +1,40 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130659",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "preduzece",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "naziv",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mib",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pib",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Preduzece",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

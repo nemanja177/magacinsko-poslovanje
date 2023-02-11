@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="poslovniPartner">
+      <h2 data-cy="poslovniPartnerDetailsHeading"><span>Poslovni Partner</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.id }}</span>
+        </dd>
+        <dt><span>Ime</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.ime }}</span>
+        </dd>
+        <dt><span>Prezime</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.prezime }}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.email }}</span>
+        </dd>
+        <dt><span>Jmbg</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.jmbg }}</span>
+        </dd>
+        <dt><span>Adresa</span></dt>
+        <dd>
+          <span>{{ poslovniPartner.adresa }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/poslovni-partner', poslovniPartner.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

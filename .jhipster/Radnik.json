@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130701",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "radnik",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prezime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresa",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefon",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Radnik",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130709",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "promet_magacinske_kartice",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "datumPrometa",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "kolicina",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cena",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "vrednost",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dokument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smer",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PrometMagacinskeKartice",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

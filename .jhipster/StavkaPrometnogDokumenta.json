@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130711",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "stavka_prometnog_dokumenta",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "kolicina",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cena",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "vrednost",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StavkaPrometnogDokumenta",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

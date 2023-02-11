@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="radnik">
+      <h2 data-cy="radnikDetailsHeading"><span>Radnik</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ radnik.id }}</span>
+        </dd>
+        <dt><span>Ime</span></dt>
+        <dd>
+          <span>{{ radnik.ime }}</span>
+        </dd>
+        <dt><span>Prezime</span></dt>
+        <dd>
+          <span>{{ radnik.prezime }}</span>
+        </dd>
+        <dt><span>Adresa</span></dt>
+        <dd>
+          <span>{{ radnik.adresa }}</span>
+        </dd>
+        <dt><span>Telefon</span></dt>
+        <dd>
+          <span>{{ radnik.telefon }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/radnik', radnik.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

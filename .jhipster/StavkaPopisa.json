@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130708",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "stavka_popisa",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "kolicinaPopisa",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "kolicinaPoKnjigama",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "StavkaPopisa",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130712",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "prometni_dokument",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "brojDokumenata",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "datum",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "vrsta",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PrometniDokument",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

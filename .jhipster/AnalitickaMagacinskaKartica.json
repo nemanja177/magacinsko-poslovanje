@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130710",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "analiticka_magacinska_kartica",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "datumPrometa",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "kolicina",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "cena",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "vrednost",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dokument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smer",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AnalitickaMagacinskaKartica",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

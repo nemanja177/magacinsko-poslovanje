@@ -1,0 +1,128 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-magacinska-kartica-heading" data-cy="MagacinskaKarticaCreateUpdateHeading">Create or edit a Magacinska Kartica</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_pocetnoStanjeKolicina">Pocetno Stanje Kolicina</label>
+          <input
+            type="number"
+            class="form-control"
+            name="pocetnoStanjeKolicina"
+            id="field_pocetnoStanjeKolicina"
+            data-cy="pocetnoStanjeKolicina"
+            formControlName="pocetnoStanjeKolicina"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_prometUlazaKolicina">Promet Ulaza Kolicina</label>
+          <input
+            type="number"
+            class="form-control"
+            name="prometUlazaKolicina"
+            id="field_prometUlazaKolicina"
+            data-cy="prometUlazaKolicina"
+            formControlName="prometUlazaKolicina"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_prometIzlazaKolicina">Promet Izlaza Kolicina</label>
+          <input
+            type="number"
+            class="form-control"
+            name="prometIzlazaKolicina"
+            id="field_prometIzlazaKolicina"
+            data-cy="prometIzlazaKolicina"
+            formControlName="prometIzlazaKolicina"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_ukupnaKolicina">Ukupna Kolicina</label>
+          <input
+            type="number"
+            class="form-control"
+            name="ukupnaKolicina"
+            id="field_ukupnaKolicina"
+            data-cy="ukupnaKolicina"
+            formControlName="ukupnaKolicina"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_pocetnoStanjeVrednosti">Pocetno Stanje Vrednosti</label>
+          <input
+            type="number"
+            class="form-control"
+            name="pocetnoStanjeVrednosti"
+            id="field_pocetnoStanjeVrednosti"
+            data-cy="pocetnoStanjeVrednosti"
+            formControlName="pocetnoStanjeVrednosti"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_prometUlazaVrednosti">Promet Ulaza Vrednosti</label>
+          <input
+            type="number"
+            class="form-control"
+            name="prometUlazaVrednosti"
+            id="field_prometUlazaVrednosti"
+            data-cy="prometUlazaVrednosti"
+            formControlName="prometUlazaVrednosti"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_prometIzlazaVrednosti">Promet Izlaza Vrednosti</label>
+          <input
+            type="number"
+            class="form-control"
+            name="prometIzlazaVrednosti"
+            id="field_prometIzlazaVrednosti"
+            data-cy="prometIzlazaVrednosti"
+            formControlName="prometIzlazaVrednosti"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_ukupnaVrednost">Ukupna Vrednost</label>
+          <input
+            type="number"
+            class="form-control"
+            name="ukupnaVrednost"
+            id="field_ukupnaVrednost"
+            data-cy="ukupnaVrednost"
+            formControlName="ukupnaVrednost"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130705",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "magacinska_kartica",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "pocetnoStanjeKolicina",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prometUlazaKolicina",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prometIzlazaKolicina",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ukupnaKolicina",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "pocetnoStanjeVrednosti",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prometUlazaVrednosti",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "prometIzlazaVrednosti",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "ukupnaVrednost",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "MagacinskaKartica",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

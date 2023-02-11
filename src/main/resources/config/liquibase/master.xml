@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="floatType" value="float" dbms="mysql"/>
+    <property name="clobType" value="clob" dbms="mysql"/>
+    <property name="blobType" value="longblob" dbms="mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="mysql"/>
+    <property name="datetimeType" value="datetime(6)" dbms="mysql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130659_added_entity_Preduzece.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130700_added_entity_PoslovniPartner.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130701_added_entity_Radnik.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130702_added_entity_Magacin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130703_added_entity_Artikal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130704_added_entity_JedinicaMere.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130705_added_entity_MagacinskaKartica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130706_added_entity_PoslovanGodina.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130707_added_entity_Popis.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130708_added_entity_StavkaPopisa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130709_added_entity_PrometMagacinskeKartice.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130710_added_entity_AnalitickaMagacinskaKartica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130711_added_entity_StavkaPrometnogDokumenta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20230211130712_added_entity_PrometniDokument.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

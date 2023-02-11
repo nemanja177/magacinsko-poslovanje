@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130706",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "poslovan_godina",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "godina",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "zakljucena",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "PoslovanGodina",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

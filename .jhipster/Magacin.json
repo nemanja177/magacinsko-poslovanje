@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20230211130702",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "magacin",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "naziv",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Magacin",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "no"
+}

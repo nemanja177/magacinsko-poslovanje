@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="poslovanGodina">
+      <h2 data-cy="poslovanGodinaDetailsHeading"><span>Poslovan Godina</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>Id</span></dt>
+        <dd>
+          <span>{{ poslovanGodina.id }}</span>
+        </dd>
+        <dt><span>Godina</span></dt>
+        <dd>
+          <span>{{ poslovanGodina.godina }}</span>
+        </dd>
+        <dt><span>Zakljucena</span></dt>
+        <dd>
+          <span>{{ poslovanGodina.zakljucena }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/poslovan-godina', poslovanGodina.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
