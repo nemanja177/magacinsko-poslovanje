@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface StavkaPrometnogDokumentaRepository extends JpaRepository<StavkaPrometnogDokumenta, Long> {}
+public interface StavkaPrometnogDokumentaRepository extends JpaRepository<StavkaPrometnogDokumenta, Long> {
+    StavkaPrometnogDokumenta getOne(Long id);
+}

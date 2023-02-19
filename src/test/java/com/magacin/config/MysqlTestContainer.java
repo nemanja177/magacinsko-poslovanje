@@ -1,4 +1,4 @@
-package com.magacin.config;
+/*package com.magacin.config;
 
 import java.util.Collections;
 import org.slf4j.Logger;
@@ -45,3 +45,4 @@ public class MysqlTestContainer implements SqlTestContainer {
         return mysqlContainer;
     }
 }
+*/
