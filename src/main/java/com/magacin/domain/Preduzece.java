@@ -48,12 +48,65 @@ public class Preduzece implements Serializable {
     private Set<Radnik> radnici = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public Preduzece id(Long id) {
+    public Preduzece() {
+		super();
+	}
+
+	public Preduzece(String naziv, String adresa, String telefon, String mib, String pib,
+			Set<PoslovanGodina> poslovanGodine, Set<PoslovniPartner> poslovniPartner, Set<Magacin> magacini,
+			Set<Radnik> radnici) {
+		super();
+		this.naziv = naziv;
+		this.adresa = adresa;
+		this.telefon = telefon;
+		this.mib = mib;
+		this.pib = pib;
+		this.poslovanGodine = poslovanGodine;
+		this.poslovniPartner = poslovniPartner;
+		this.magacini = magacini;
+		this.radnici = radnici;
+	}
+
+	public Set<PoslovanGodina> getPoslovanGodine() {
+		return poslovanGodine;
+	}
+
+	public void setPoslovanGodine(Set<PoslovanGodina> poslovanGodine) {
+		this.poslovanGodine = poslovanGodine;
+	}
+
+	public Set<PoslovniPartner> getPoslovniPartner() {
+		return poslovniPartner;
+	}
+
+	public void setPoslovniPartner(Set<PoslovniPartner> poslovniPartner) {
+		this.poslovniPartner = poslovniPartner;
+	}
+
+	public Set<Magacin> getMagacini() {
+		return magacini;
+	}
+
+	public void setMagacini(Set<Magacin> magacini) {
+		this.magacini = magacini;
+	}
+
+	public Set<Radnik> getRadnici() {
+		return radnici;
+	}
+
+	public void setRadnici(Set<Radnik> radnici) {
+		this.radnici = radnici;
+	}
+
+	public Preduzece id(Long id) {
         this.setId(id);
         return this;
     }

@@ -41,12 +41,44 @@ public class Radnik implements Serializable {
     private Magacin magacin;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public Radnik id(Long id) {
+    public Radnik() {
+		super();
+	}
+
+	public Radnik(String ime, String prezime, String adresa, String telefon, Preduzece preduzece, Magacin magacin) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+		this.adresa = adresa;
+		this.telefon = telefon;
+		this.preduzece = preduzece;
+		this.magacin = magacin;
+	}
+
+	public Preduzece getPreduzece() {
+		return preduzece;
+	}
+
+	public void setPreduzece(Preduzece preduzece) {
+		this.preduzece = preduzece;
+	}
+
+	public Magacin getMagacin() {
+		return magacin;
+	}
+
+	public void setMagacin(Magacin magacin) {
+		this.magacin = magacin;
+	}
+
+	public Radnik id(Long id) {
         this.setId(id);
         return this;
     }

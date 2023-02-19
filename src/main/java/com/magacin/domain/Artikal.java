@@ -46,11 +46,61 @@ public class Artikal implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
+    
+    
     public Long getId() {
         return this.id;
     }
 
-    public Artikal id(Long id) {
+    public Artikal() {
+		super();
+	}
+
+	public Artikal(String naziv, String opis, String pakovanje, MagacinskaKartica magacinskaKarticaId,
+			StavkaPrometnogDokumenta stavakaDokumenta, StavkaPopisa stavkaPropisa, Set<JedinicaMere> jedinicaMere) {
+		super();
+		this.naziv = naziv;
+		this.opis = opis;
+		this.pakovanje = pakovanje;
+		this.magacinskaKarticaId = magacinskaKarticaId;
+		this.stavakaDokumenta = stavakaDokumenta;
+		this.stavkaPropisa = stavkaPropisa;
+		this.jedinicaMere = jedinicaMere;
+	}
+
+	public MagacinskaKartica getMagacinskaKarticaId() {
+		return magacinskaKarticaId;
+	}
+
+	public void setMagacinskaKarticaId(MagacinskaKartica magacinskaKarticaId) {
+		this.magacinskaKarticaId = magacinskaKarticaId;
+	}
+
+	public StavkaPrometnogDokumenta getStavakaDokumenta() {
+		return stavakaDokumenta;
+	}
+
+	public void setStavakaDokumenta(StavkaPrometnogDokumenta stavakaDokumenta) {
+		this.stavakaDokumenta = stavakaDokumenta;
+	}
+
+	public StavkaPopisa getStavkaPropisa() {
+		return stavkaPropisa;
+	}
+
+	public void setStavkaPropisa(StavkaPopisa stavkaPropisa) {
+		this.stavkaPropisa = stavkaPropisa;
+	}
+
+	public Set<JedinicaMere> getJedinicaMere() {
+		return jedinicaMere;
+	}
+
+	public void setJedinicaMere(Set<JedinicaMere> jedinicaMere) {
+		this.jedinicaMere = jedinicaMere;
+	}
+
+	public Artikal id(Long id) {
         this.setId(id);
         return this;
     }

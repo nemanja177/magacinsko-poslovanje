@@ -36,8 +36,25 @@ public class AnalitickaMagacinskaKartica implements Serializable {
 
     @Column(name = "smer")
     private Boolean smer;
+    
+    
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
+    public AnalitickaMagacinskaKartica() {
+		super();
+	}
+
+	public AnalitickaMagacinskaKartica(LocalDate datumPrometa, Long kolicina, Long cena, Long vrednost, String dokument,
+			Boolean smer) {
+		super();
+		this.datumPrometa = datumPrometa;
+		this.kolicina = kolicina;
+		this.cena = cena;
+		this.vrednost = vrednost;
+		this.dokument = dokument;
+		this.smer = smer;
+	}
+
+	// jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
         return this.id;

@@ -44,12 +44,46 @@ public class PoslovniPartner implements Serializable {
     private Preduzece preduzece;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public PoslovniPartner id(Long id) {
+    public PoslovniPartner() {
+		super();
+	}
+
+	public PoslovniPartner(String ime, String prezime, String email, String jmbg, String adresa,
+			PrometniDokument prometniDokument, Preduzece preduzece) {
+		super();
+		this.ime = ime;
+		this.prezime = prezime;
+		this.email = email;
+		this.jmbg = jmbg;
+		this.adresa = adresa;
+		this.prometniDokument = prometniDokument;
+		this.preduzece = preduzece;
+	}
+
+	public PrometniDokument getPrometniDokument() {
+		return prometniDokument;
+	}
+
+	public void setPrometniDokument(PrometniDokument prometniDokument) {
+		this.prometniDokument = prometniDokument;
+	}
+
+	public Preduzece getPreduzece() {
+		return preduzece;
+	}
+
+	public void setPreduzece(Preduzece preduzece) {
+		this.preduzece = preduzece;
+	}
+
+	public PoslovniPartner id(Long id) {
         this.setId(id);
         return this;
     }

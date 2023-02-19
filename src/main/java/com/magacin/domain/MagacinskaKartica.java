@@ -59,12 +59,69 @@ public class MagacinskaKartica implements Serializable {
     private Set<PrometMagacinskeKartice> prometMagacinskeKaritce = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public MagacinskaKartica id(Long id) {
+    public MagacinskaKartica() {
+		super();
+	}
+
+	public MagacinskaKartica(Double pocetnoStanjeKolicina, Double prometUlazaKolicina, Double prometIzlazaKolicina,
+			Double ukupnaKolicina, Double pocetnoStanjeVrednosti, Double prometUlazaVrednosti,
+			Double prometIzlazaVrednosti, Double ukupnaVrednost, Magacin magacin, PoslovanGodina poslovnaGodina,
+			Set<Artikal> artikal, Set<PrometMagacinskeKartice> prometMagacinskeKaritce) {
+		super();
+		this.pocetnoStanjeKolicina = pocetnoStanjeKolicina;
+		this.prometUlazaKolicina = prometUlazaKolicina;
+		this.prometIzlazaKolicina = prometIzlazaKolicina;
+		this.ukupnaKolicina = ukupnaKolicina;
+		this.pocetnoStanjeVrednosti = pocetnoStanjeVrednosti;
+		this.prometUlazaVrednosti = prometUlazaVrednosti;
+		this.prometIzlazaVrednosti = prometIzlazaVrednosti;
+		this.ukupnaVrednost = ukupnaVrednost;
+		this.magacin = magacin;
+		this.poslovnaGodina = poslovnaGodina;
+		this.artikal = artikal;
+		this.prometMagacinskeKaritce = prometMagacinskeKaritce;
+	}
+
+	public Magacin getMagacin() {
+		return magacin;
+	}
+
+	public void setMagacin(Magacin magacin) {
+		this.magacin = magacin;
+	}
+
+	public PoslovanGodina getPoslovnaGodina() {
+		return poslovnaGodina;
+	}
+
+	public void setPoslovnaGodina(PoslovanGodina poslovnaGodina) {
+		this.poslovnaGodina = poslovnaGodina;
+	}
+
+	public Set<Artikal> getArtikal() {
+		return artikal;
+	}
+
+	public void setArtikal(Set<Artikal> artikal) {
+		this.artikal = artikal;
+	}
+
+	public Set<PrometMagacinskeKartice> getPrometMagacinskeKaritce() {
+		return prometMagacinskeKaritce;
+	}
+
+	public void setPrometMagacinskeKaritce(Set<PrometMagacinskeKartice> prometMagacinskeKaritce) {
+		this.prometMagacinskeKaritce = prometMagacinskeKaritce;
+	}
+
+	public MagacinskaKartica id(Long id) {
         this.setId(id);
         return this;
     }

@@ -42,12 +42,38 @@ public class PrometMagacinskeKartice implements Serializable {
     private MagacinskaKartica magacinskaKartica;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public PrometMagacinskeKartice id(Long id) {
+    public PrometMagacinskeKartice() {
+		super();
+	}
+
+	public PrometMagacinskeKartice(LocalDate datumPrometa, Long kolicina, Long cena, Long vrednost, String dokument,
+			String smer, MagacinskaKartica magacinskaKartica) {
+		super();
+		this.datumPrometa = datumPrometa;
+		this.kolicina = kolicina;
+		this.cena = cena;
+		this.vrednost = vrednost;
+		this.dokument = dokument;
+		this.smer = smer;
+		this.magacinskaKartica = magacinskaKartica;
+	}
+
+	public MagacinskaKartica getMagacinskaKartica() {
+		return magacinskaKartica;
+	}
+
+	public void setMagacinskaKartica(MagacinskaKartica magacinskaKartica) {
+		this.magacinskaKartica = magacinskaKartica;
+	}
+
+	public PrometMagacinskeKartice id(Long id) {
         this.setId(id);
         return this;
     }

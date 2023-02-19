@@ -40,12 +40,61 @@ public class PoslovanGodina implements Serializable {
     private Preduzece preduzece;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public PoslovanGodina id(Long id) {
+    public PoslovanGodina() {
+		super();
+	}
+
+	public PoslovanGodina(Long godina, Boolean zakljucena, Set<Popis> popis, Set<MagacinskaKartica> magacinskaKartica,
+			Set<PrometniDokument> prometniDokument, Preduzece preduzece) {
+		super();
+		this.godina = godina;
+		this.zakljucena = zakljucena;
+		this.popis = popis;
+		this.magacinskaKartica = magacinskaKartica;
+		this.prometniDokument = prometniDokument;
+		this.preduzece = preduzece;
+	}
+
+	public Set<Popis> getPopis() {
+		return popis;
+	}
+
+	public void setPopis(Set<Popis> popis) {
+		this.popis = popis;
+	}
+
+	public Set<MagacinskaKartica> getMagacinskaKartica() {
+		return magacinskaKartica;
+	}
+
+	public void setMagacinskaKartica(Set<MagacinskaKartica> magacinskaKartica) {
+		this.magacinskaKartica = magacinskaKartica;
+	}
+
+	public Set<PrometniDokument> getPrometniDokument() {
+		return prometniDokument;
+	}
+
+	public void setPrometniDokument(Set<PrometniDokument> prometniDokument) {
+		this.prometniDokument = prometniDokument;
+	}
+
+	public Preduzece getPreduzece() {
+		return preduzece;
+	}
+
+	public void setPreduzece(Preduzece preduzece) {
+		this.preduzece = preduzece;
+	}
+
+	public PoslovanGodina id(Long id) {
         this.setId(id);
         return this;
     }

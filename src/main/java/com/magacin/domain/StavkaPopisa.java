@@ -34,12 +34,43 @@ public class StavkaPopisa implements Serializable {
     private PrometniDokument prometniDokument;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public StavkaPopisa id(Long id) {
+    public Set<Artikal> getArtikal() {
+		return artikal;
+	}
+
+	public void setArtikal(Set<Artikal> artikal) {
+		this.artikal = artikal;
+	}
+
+	public PrometniDokument getPrometniDokument() {
+		return prometniDokument;
+	}
+
+	public void setPrometniDokument(PrometniDokument prometniDokument) {
+		this.prometniDokument = prometniDokument;
+	}
+
+	public StavkaPopisa() {
+		super();
+	}
+
+	public StavkaPopisa(Long kolicinaPopisa, Long kolicinaPoKnjigama, Set<Artikal> artikal,
+			PrometniDokument prometniDokument) {
+		super();
+		this.kolicinaPopisa = kolicinaPopisa;
+		this.kolicinaPoKnjigama = kolicinaPoKnjigama;
+		this.artikal = artikal;
+		this.prometniDokument = prometniDokument;
+	}
+
+	public StavkaPopisa id(Long id) {
         this.setId(id);
         return this;
     }

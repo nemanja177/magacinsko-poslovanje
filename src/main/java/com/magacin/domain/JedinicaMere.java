@@ -30,11 +30,33 @@ public class JedinicaMere implements Serializable {
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
+    
+    
+    
     public Long getId() {
         return this.id;
     }
 
-    public JedinicaMere id(Long id) {
+    public JedinicaMere() {
+		super();
+	}
+
+	public JedinicaMere(String nazivJedinice, String skraceniNaziv, Artikal artikal) {
+		super();
+		this.nazivJedinice = nazivJedinice;
+		this.skraceniNaziv = skraceniNaziv;
+		this.artikal = artikal;
+	}
+
+	public Artikal getArtikal() {
+		return artikal;
+	}
+
+	public void setArtikal(Artikal artikal) {
+		this.artikal = artikal;
+	}
+
+	public JedinicaMere id(Long id) {
         this.setId(id);
         return this;
     }

@@ -87,8 +87,36 @@ public class User extends AbstractAuditingEntity<Long> implements Serializable {
     )
     @BatchSize(size = 20)
     private Set<Authority> authorities = new HashSet<>();
+    
+    
 
-    public Long getId() {
+    public User() {
+		super();
+	}
+
+	public User(
+			@NotNull @Pattern(regexp = "^(?>[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*)|(?>[_.@A-Za-z0-9-]+)$") @Size(min = 1, max = 50) String login,
+			@NotNull @Size(min = 60, max = 60) String password, @Size(max = 50) String firstName,
+			@Size(max = 50) String lastName, @Email @Size(min = 5, max = 254) String email, @NotNull boolean activated,
+			@Size(min = 2, max = 10) String langKey, @Size(max = 256) String imageUrl,
+			@Size(max = 20) String activationKey, @Size(max = 20) String resetKey, Instant resetDate,
+			Set<Authority> authorities) {
+		super();
+		this.login = login;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.activated = activated;
+		this.langKey = langKey;
+		this.imageUrl = imageUrl;
+		this.activationKey = activationKey;
+		this.resetKey = resetKey;
+		this.resetDate = resetDate;
+		this.authorities = authorities;
+	}
+
+	public Long getId() {
         return id;
     }
 

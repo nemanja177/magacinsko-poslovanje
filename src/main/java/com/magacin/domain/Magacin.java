@@ -40,12 +40,69 @@ public class Magacin implements Serializable {
     private Set<PrometniDokument> prometniDokument = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+    
+    
 
     public Long getId() {
         return this.id;
     }
 
-    public Magacin id(Long id) {
+    public Magacin() {
+		super();
+	}
+
+	public Magacin(String naziv, Preduzece preduzece, Set<Radnik> radnici, Set<Popis> popis,
+			Set<MagacinskaKartica> magacinskaKartica, Set<PrometniDokument> prometniDokument) {
+		super();
+		this.naziv = naziv;
+		this.preduzece = preduzece;
+		this.radnici = radnici;
+		this.popis = popis;
+		this.magacinskaKartica = magacinskaKartica;
+		this.prometniDokument = prometniDokument;
+	}
+
+	public Preduzece getPreduzece() {
+		return preduzece;
+	}
+
+	public void setPreduzece(Preduzece preduzece) {
+		this.preduzece = preduzece;
+	}
+
+	public Set<Radnik> getRadnici() {
+		return radnici;
+	}
+
+	public void setRadnici(Set<Radnik> radnici) {
+		this.radnici = radnici;
+	}
+
+	public Set<Popis> getPopis() {
+		return popis;
+	}
+
+	public void setPopis(Set<Popis> popis) {
+		this.popis = popis;
+	}
+
+	public Set<MagacinskaKartica> getMagacinskaKartica() {
+		return magacinskaKartica;
+	}
+
+	public void setMagacinskaKartica(Set<MagacinskaKartica> magacinskaKartica) {
+		this.magacinskaKartica = magacinskaKartica;
+	}
+
+	public Set<PrometniDokument> getPrometniDokument() {
+		return prometniDokument;
+	}
+
+	public void setPrometniDokument(Set<PrometniDokument> prometniDokument) {
+		this.prometniDokument = prometniDokument;
+	}
+
+	public Magacin id(Long id) {
         this.setId(id);
         return this;
     }

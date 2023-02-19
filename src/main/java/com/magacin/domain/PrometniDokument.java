@@ -47,10 +47,61 @@ public class PrometniDokument implements Serializable {
 
     @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "prometni_dokument")
     private Set<StavkaPrometnogDokumenta> stavkaDokumenta = new HashSet<>();
+    
+    
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
+    public PrometniDokument() {
+		super();
+	}
 
-    public Long getId() {
+	public PrometniDokument(Long brojDokumenata, LocalDate datum, String vrsta, String status, Magacin magacin,
+			PoslovniPartner partner, PoslovanGodina poslovnaGodina, Set<StavkaPrometnogDokumenta> stavkaDokumenta) {
+		super();
+		this.brojDokumenata = brojDokumenata;
+		this.datum = datum;
+		this.vrsta = vrsta;
+		this.status = status;
+		this.magacin = magacin;
+		this.partner = partner;
+		this.poslovnaGodina = poslovnaGodina;
+		this.stavkaDokumenta = stavkaDokumenta;
+	}
+
+	// jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public Magacin getMagacin() {
+		return magacin;
+	}
+
+	public void setMagacin(Magacin magacin) {
+		this.magacin = magacin;
+	}
+
+	public PoslovniPartner getPartner() {
+		return partner;
+	}
+
+	public void setPartner(PoslovniPartner partner) {
+		this.partner = partner;
+	}
+
+	public PoslovanGodina getPoslovnaGodina() {
+		return poslovnaGodina;
+	}
+
+	public void setPoslovnaGodina(PoslovanGodina poslovnaGodina) {
+		this.poslovnaGodina = poslovnaGodina;
+	}
+
+	public Set<StavkaPrometnogDokumenta> getStavkaDokumenta() {
+		return stavkaDokumenta;
+	}
+
+	public void setStavkaDokumenta(Set<StavkaPrometnogDokumenta> stavkaDokumenta) {
+		this.stavkaDokumenta = stavkaDokumenta;
+	}
+
+	public Long getId() {
         return this.id;
     }
 

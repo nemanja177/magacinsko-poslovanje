@@ -35,10 +35,41 @@ public class StavkaPrometnogDokumenta implements Serializable {
     @ManyToOne
     @JoinColumn(name = "popisId", referencedColumnName = "id", nullable = false)
     private Popis popis;
+    
+    
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
+    public StavkaPrometnogDokumenta() {
+		super();
+	}
 
-    public Long getId() {
+	public StavkaPrometnogDokumenta(Long kolicina, Long cena, Long vrednost, Set<Artikal> artikal, Popis popis) {
+		super();
+		this.kolicina = kolicina;
+		this.cena = cena;
+		this.vrednost = vrednost;
+		this.artikal = artikal;
+		this.popis = popis;
+	}
+
+	// jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public Set<Artikal> getArtikal() {
+		return artikal;
+	}
+
+	public void setArtikal(Set<Artikal> artikal) {
+		this.artikal = artikal;
+	}
+
+	public Popis getPopis() {
+		return popis;
+	}
+
+	public void setPopis(Popis popis) {
+		this.popis = popis;
+	}
+
+	public Long getId() {
         return this.id;
     }
 
