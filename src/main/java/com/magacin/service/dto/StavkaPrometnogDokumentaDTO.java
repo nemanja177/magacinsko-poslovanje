@@ -1,5 +1,8 @@
 package com.magacin.service.dto;
 
+import com.magacin.domain.Artikal;
+import com.magacin.domain.Popis;
+
 public class StavkaPrometnogDokumentaDTO {
 
     private Long id;
@@ -10,12 +13,18 @@ public class StavkaPrometnogDokumentaDTO {
 
     private Long vrednost;
 
-    public StavkaPrometnogDokumentaDTO(Long id, Long kolicina, Long cena, Long vrednost) {
+    private Artikal artikal;
+
+    private Popis popis;
+
+    public StavkaPrometnogDokumentaDTO(Long id, Long kolicina, Long cena, Long vrednost, Artikal artikal, Popis popis) {
         super();
         this.id = id;
         this.kolicina = kolicina;
         this.cena = cena;
         this.vrednost = vrednost;
+        this.artikal = artikal;
+        this.popis = popis;
     }
 
     public StavkaPrometnogDokumentaDTO() {}
@@ -50,5 +59,21 @@ public class StavkaPrometnogDokumentaDTO {
 
     public void setVrednost(Long vrednost) {
         this.vrednost = vrednost;
+    }
+
+    public Artikal getArtikal() {
+        return artikal;
+    }
+
+    public void setArtikal(Artikal artikal) {
+        this.artikal = artikal;
+    }
+
+    public Popis getPopis() {
+        return popis;
+    }
+
+    public void setPopis(Popis popis) {
+        this.popis = popis;
     }
 }
