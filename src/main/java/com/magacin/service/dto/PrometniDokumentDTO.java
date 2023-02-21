@@ -43,7 +43,9 @@ public class PrometniDokumentDTO {
         this.stavkaPrometnogDokumenta = stavkaPrometnogDokumenta;
     }
 
-    private PrometniDokumentDTO() {}
+    public PrometniDokumentDTO() {
+        super();
+    }
 
     public Long getId() {
         return id;

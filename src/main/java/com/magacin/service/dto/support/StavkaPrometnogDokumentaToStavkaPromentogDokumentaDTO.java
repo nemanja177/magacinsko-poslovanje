@@ -16,7 +16,8 @@ public class StavkaPrometnogDokumentaToStavkaPromentogDokumentaDTO
         stDTO.setCena(stavkaDokumenta.getCena());
         stDTO.setKolicina(stavkaDokumenta.getKolicina());
         stDTO.setVrednost(stavkaDokumenta.getVrednost());
-
+        //stDTO.setArtikal(new ArtikalDTO(stavkaDokumenta.getArtikal()));
+        //stDTO.setPopis(new PopisDTO(stavkaDokumenta.getPopis()));
         return stDTO;
     }
 

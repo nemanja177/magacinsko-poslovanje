@@ -1,11 +1,22 @@
 package com.magacin.service.dto.support;
 
+import com.magacin.domain.Artikal;
+import com.magacin.domain.Popis;
 import com.magacin.domain.StavkaPrometnogDokumenta;
+import com.magacin.service.ArtikalInterface;
+import com.magacin.service.PopisInterface;
 import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
 public class StavkaPrometnogDokumentaDTOtoStavkaPrometnogDokumenta
     implements Converter<StavkaPrometnogDokumentaDTO, StavkaPrometnogDokumenta> {
+
+    @Autowired
+    private PopisInterface popInterafce;
+
+    @Autowired
+    private ArtikalInterface artikalInterface;
 
     @Override
     public StavkaPrometnogDokumenta convert(StavkaPrometnogDokumentaDTO stavkaPrometnogDTO) {
@@ -14,6 +25,13 @@ public class StavkaPrometnogDokumentaDTOtoStavkaPrometnogDokumenta
         stp.setCena(stavkaPrometnogDTO.getCena());
         stp.setKolicina(stavkaPrometnogDTO.getKolicina());
         stp.setVrednost(stavkaPrometnogDTO.getVrednost());
+
+        Popis popis = popInterafce.findOne(stavkaPrometnogDTO.getArtikal().getId());
+        if (popis != null) {
+            stp.setPopis(popis);
+        }
+
+        Artikal artikal = artikalInterface.findOne(stavkaPrometnogDTO.getArtikal().getId());
 
         return stp;
     }
