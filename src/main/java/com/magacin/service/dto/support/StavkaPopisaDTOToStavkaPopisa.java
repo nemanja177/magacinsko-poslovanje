@@ -5,10 +5,8 @@ import com.magacin.domain.PrometniDokument;
 import com.magacin.domain.StavkaPopisa;
 import com.magacin.service.ArtikalInterface;
 import com.magacin.service.PrometniDokumentInterface;
-import com.magacin.service.PrometniDokumentService;
-import com.magacin.service.StavkaPopisaInterface;
-import com.magacin.service.StavkaPopisaService;
 import com.magacin.service.dto.StavkaPopisaDTO;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
@@ -31,11 +29,6 @@ public class StavkaPopisaDTOToStavkaPopisa implements Converter<StavkaPopisaDTO,
         if (dokument != null) {
             stp.setPrometniDokument(dokument);
         }
-
-        Artikal artikal = artikalInterface.findOne(stavkaPopisaDTO.getArtikal().getId());
-        /*if(artikal != null) {
-			stp.setArtikal(artikal);
-		}*/
 
         return stp;
     }

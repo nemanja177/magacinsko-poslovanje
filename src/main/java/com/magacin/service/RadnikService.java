@@ -4,6 +4,8 @@ import com.magacin.domain.Radnik;
 import com.magacin.repository.RadnikRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public class RadnikService implements RadnikInterface {
 

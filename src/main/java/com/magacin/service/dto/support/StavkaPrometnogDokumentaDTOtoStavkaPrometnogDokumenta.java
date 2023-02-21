@@ -26,12 +26,10 @@ public class StavkaPrometnogDokumentaDTOtoStavkaPrometnogDokumenta
         stp.setKolicina(stavkaPrometnogDTO.getKolicina());
         stp.setVrednost(stavkaPrometnogDTO.getVrednost());
 
-        Popis popis = popInterafce.findOne(stavkaPrometnogDTO.getArtikal().getId());
+        Popis popis = popInterafce.findOne(stavkaPrometnogDTO.getPopis().getId());
         if (popis != null) {
             stp.setPopis(popis);
         }
-
-        Artikal artikal = artikalInterface.findOne(stavkaPrometnogDTO.getArtikal().getId());
 
         return stp;
     }

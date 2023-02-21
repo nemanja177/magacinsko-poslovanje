@@ -29,4 +29,9 @@ public class ArtikalService implements ArtikalInterface {
     public void delete(Long id) {
         artRep.deleteById(id);
     }
+
+    @Override
+    public List<Artikal> findByPrometniDokument(Long id) {
+        return artRep.findByPrometniDokument_Id(id);
+    }
 }

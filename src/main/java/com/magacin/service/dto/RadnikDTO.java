@@ -7,7 +7,7 @@ public class RadnikDTO {
 
     private Long id;
 
-    private String name;
+    private String ime;
 
     private String prezime;
 
@@ -15,14 +15,14 @@ public class RadnikDTO {
 
     private String telefon;
 
-    private Preduzece preduzece;
+    private PreduzeceDTO preduzece;
 
     private Magacin magacin;
 
-    public RadnikDTO(Long id, String name, String prezime, String adresa, String telefon, Preduzece preduzece, Magacin magacin) {
+    public RadnikDTO(Long id, String ime, String prezime, String adresa, String telefon, PreduzeceDTO preduzece, Magacin magacin) {
         super();
         this.id = id;
-        this.name = name;
+        this.ime = ime;
         this.prezime = prezime;
         this.adresa = adresa;
         this.telefon = telefon;
@@ -30,7 +30,9 @@ public class RadnikDTO {
         this.magacin = magacin;
     }
 
-    private RadnikDTO() {}
+    public RadnikDTO() {
+        super();
+    }
 
     public Long getId() {
         return id;
@@ -40,12 +42,12 @@ public class RadnikDTO {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getIme() {
+        return ime;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setIme(String ime) {
+        this.ime = ime;
     }
 
     public String getPrezime() {
@@ -72,11 +74,11 @@ public class RadnikDTO {
         this.telefon = telefon;
     }
 
-    public Preduzece getPreduzece() {
+    public PreduzeceDTO getPreduzece() {
         return preduzece;
     }
 
-    public void setPreduzece(Preduzece preduzece) {
+    public void setPreduzece(PreduzeceDTO preduzece) {
         this.preduzece = preduzece;
     }
 

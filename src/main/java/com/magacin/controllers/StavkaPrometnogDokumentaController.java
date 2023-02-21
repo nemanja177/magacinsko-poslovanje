@@ -38,17 +38,12 @@ public class StavkaPrometnogDokumentaController {
     @Autowired
     StavkaPrometnogDokumentaToStavkaPromentogDokumentaDTO toStavkaPrometnogDTO;
 
-    /*@GetMapping
-    public ResponseEntity<List<StavkaPrometnogDTO>> getAll(@RequestParam(defaultValue = "0") int pageNum) {
+    @GetMapping
+    public ResponseEntity<List<StavkaPrometnogDokumentaDTO>> getAll(@RequestParam(defaultValue = "0") int pageNum) {
+        List<StavkaPrometnogDokumenta> partners = stavkaInterface.findAll();
 
-        Page<StavkaPrometnogDokumenta> partners = stavkaInterface.findAll(pageNum);
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("totalPages",Integer.toString(partners.getTotalPages()));
-       headers.add("access-control-expose-headers","totalPages");
-
-        return new ResponseEntity<>(toBusinessPartnerDTO.convert(partners.getContent()), HttpStatus.OK);
-    }*/
+        return new ResponseEntity<>(toStavkaPrometnogDTO.convert(partners), HttpStatus.OK);
+    }
 
     @PostMapping(consumes = "application/json")
     public ResponseEntity<?> create(@Validated @RequestBody StavkaPrometnogDokumentaDTO stavkaDTO, BindingResult result) {
@@ -61,7 +56,7 @@ public class StavkaPrometnogDokumentaController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<StavkaPrometnogDokumenta> update(
+    public ResponseEntity<StavkaPrometnogDokumentaDTO> update(
         @RequestBody StavkaPrometnogDokumentaDTO stavkaPrometnogDTO,
         @PathVariable("id") Long id
     ) {

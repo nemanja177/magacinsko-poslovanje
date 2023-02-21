@@ -1,6 +1,10 @@
 package com.magacin.service.dto;
 
+import com.magacin.domain.PoslovniPartner;
+
 public class PoslovniPartnerDTO {
+
+    private Long id;
 
     private String ime;
 
@@ -15,6 +19,7 @@ public class PoslovniPartnerDTO {
     private PrometniDokumentDTO prometniDokumentDTO;
 
     public PoslovniPartnerDTO(
+        Long id,
         String ime,
         String prezime,
         String jmbg,
@@ -23,6 +28,7 @@ public class PoslovniPartnerDTO {
         PrometniDokumentDTO prometniDokumentDTO
     ) {
         super();
+        this.id = id;
         this.ime = ime;
         this.prezime = prezime;
         this.jmbg = jmbg;
@@ -31,7 +37,21 @@ public class PoslovniPartnerDTO {
         this.prometniDokumentDTO = prometniDokumentDTO;
     }
 
-    public PoslovniPartnerDTO() {}
+    public PoslovniPartnerDTO(PoslovniPartner partner) {
+        this(partner.getId(), partner.getIme(), partner.getPrezime(), partner.getJmbg(), partner.getAdresa(), null, null);
+    }
+
+    public PoslovniPartnerDTO() {
+        super();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getIme() {
         return ime;

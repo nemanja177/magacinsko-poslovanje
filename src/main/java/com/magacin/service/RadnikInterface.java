@@ -2,11 +2,12 @@ package com.magacin.service;
 
 import com.magacin.domain.Radnik;
 import java.util.List;
+import org.springframework.data.domain.Page;
 
 public interface RadnikInterface {
     List<Radnik> findAll();
 
-    //Page<StavkaPrometnogDokumenta> findAll(int pageNum);
+    //Page<Radnik> findAll(int pageNum);
 
     Radnik findOne(Long id);
 

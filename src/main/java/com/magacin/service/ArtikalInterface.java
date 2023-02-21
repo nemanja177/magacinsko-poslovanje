@@ -13,4 +13,6 @@ public interface ArtikalInterface {
     Artikal save(Artikal entity);
 
     void delete(Long id);
+
+    List<Artikal> findByPrometniDokument(Long id);
 }
