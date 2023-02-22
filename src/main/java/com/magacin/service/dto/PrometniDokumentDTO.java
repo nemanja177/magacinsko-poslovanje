@@ -2,6 +2,9 @@ package com.magacin.service.dto;
 
 import com.magacin.domain.Magacin;
 import com.magacin.domain.PoslovanGodina;
+import com.magacin.domain.PoslovniPartner;
+import com.magacin.domain.PrometniDokument;
+import com.magacin.domain.Radnik;
 import java.time.LocalDate;
 
 public class PrometniDokumentDTO {
@@ -41,6 +44,10 @@ public class PrometniDokumentDTO {
 
     public PrometniDokumentDTO() {
         super();
+    }
+
+    public PrometniDokumentDTO(PrometniDokument dokument) {
+        this(dokument.getId(), dokument.getDatum(), dokument.getVrsta(), dokument.getStatus(), null, null, null);
     }
 
     public Long getId() {
