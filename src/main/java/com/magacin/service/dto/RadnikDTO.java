@@ -2,6 +2,7 @@ package com.magacin.service.dto;
 
 import com.magacin.domain.Magacin;
 import com.magacin.domain.Preduzece;
+import com.magacin.domain.Radnik;
 
 public class RadnikDTO {
 
@@ -32,6 +33,10 @@ public class RadnikDTO {
 
     public RadnikDTO() {
         super();
+    }
+
+    public RadnikDTO(Radnik radnik) {
+        this(radnik.getId(), radnik.getIme(), radnik.getPrezime(), radnik.getAdresa(), radnik.getTelefon(), null, null);
     }
 
     public Long getId() {

@@ -20,8 +20,6 @@ public class PrometniDokumentDTO {
 
     private PoslovanGodina poslovanGodina;
 
-    private StavkaPrometnogDokumentaDTO stavkaPrometnogDokumenta;
-
     public PrometniDokumentDTO(
         Long id,
         LocalDate datum,
@@ -29,8 +27,7 @@ public class PrometniDokumentDTO {
         String status,
         PoslovniPartnerDTO poslovniPartner,
         Magacin magacin,
-        PoslovanGodina poslovanGodina,
-        StavkaPrometnogDokumentaDTO stavkaPrometnogDokumenta
+        PoslovanGodina poslovanGodina
     ) {
         super();
         this.id = id;
@@ -40,7 +37,6 @@ public class PrometniDokumentDTO {
         this.poslovniPartner = poslovniPartner;
         this.magacin = magacin;
         this.poslovanGodina = poslovanGodina;
-        this.stavkaPrometnogDokumenta = stavkaPrometnogDokumenta;
     }
 
     public PrometniDokumentDTO() {
@@ -101,13 +97,5 @@ public class PrometniDokumentDTO {
 
     public void setPoslovanGodina(PoslovanGodina poslovanGodina) {
         this.poslovanGodina = poslovanGodina;
-    }
-
-    public StavkaPrometnogDokumentaDTO getStavkaPrometnogDokumenta() {
-        return stavkaPrometnogDokumenta;
-    }
-
-    public void setStavkaPrometnogDokumenta(StavkaPrometnogDokumentaDTO stavkaPrometnogDokumenta) {
-        this.stavkaPrometnogDokumenta = stavkaPrometnogDokumenta;
     }
 }

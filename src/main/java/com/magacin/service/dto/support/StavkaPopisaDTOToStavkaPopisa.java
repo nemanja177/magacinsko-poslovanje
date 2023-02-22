@@ -6,7 +6,6 @@ import com.magacin.domain.StavkaPopisa;
 import com.magacin.service.ArtikalInterface;
 import com.magacin.service.PrometniDokumentInterface;
 import com.magacin.service.dto.StavkaPopisaDTO;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
@@ -14,9 +13,6 @@ public class StavkaPopisaDTOToStavkaPopisa implements Converter<StavkaPopisaDTO,
 
     @Autowired
     private PrometniDokumentInterface dokumentInterface;
-
-    @Autowired
-    private ArtikalInterface artikalInterface;
 
     @Override
     public StavkaPopisa convert(StavkaPopisaDTO stavkaPopisaDTO) {
