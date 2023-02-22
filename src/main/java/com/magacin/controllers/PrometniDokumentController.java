@@ -1,10 +1,8 @@
 package com.magacin.controllers;
 
 import com.magacin.domain.PrometniDokument;
-import com.magacin.domain.StavkaPopisa;
 import com.magacin.service.PrometniDokumentInterface;
 import com.magacin.service.dto.PrometniDokumentDTO;
-import com.magacin.service.dto.StavkaPopisaDTO;
 import com.magacin.service.dto.support.PrometniDokumentDTOToPrometniDokument;
 import com.magacin.service.dto.support.PrometniDokumentToPrometniDokumentDTO;
 import java.util.List;

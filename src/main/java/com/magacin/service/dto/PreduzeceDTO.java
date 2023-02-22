@@ -1,8 +1,5 @@
 package com.magacin.service.dto;
 
-import com.magacin.domain.Magacin;
-import com.magacin.domain.PoslovanGodina;
-import com.magacin.domain.PoslovniPartner;
 import com.magacin.domain.Preduzece;
 
 public class PreduzeceDTO {
@@ -40,7 +37,7 @@ public class PreduzeceDTO {
         );
     }
 
-    private PreduzeceDTO() {}
+    public PreduzeceDTO() {}
 
     public Long getId() {
         return id;
