@@ -3,6 +3,7 @@ package com.magacin.controllers;
 import com.magacin.domain.StavkaPopisa;
 import com.magacin.domain.StavkaPrometnogDokumenta;
 import com.magacin.service.StavkaPopisaInterface;
+import com.magacin.service.dto.RadnikDTO;
 import com.magacin.service.dto.StavkaPopisaDTO;
 import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
 import com.magacin.service.dto.support.StavkaPopisaDTOToStavkaPopisa;
@@ -43,6 +44,12 @@ public class StavkaPopisaController {
         List<StavkaPopisa> stavka = stavkaInterface.findAll();
 
         return new ResponseEntity<>(toStavkaPopisaDTO.convert(stavka), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<StavkaPopisaDTO> getById(@PathVariable("id") Long id) {
+        if (id == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new StavkaPopisaDTO(stavkaInterface.findOne(id)), HttpStatus.OK);
     }
 
     @PostMapping(consumes = "application/json")

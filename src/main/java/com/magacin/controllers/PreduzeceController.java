@@ -43,6 +43,12 @@ public class PreduzeceController {
         return new ResponseEntity<>(toPreduzeceDTO.convert(preduzece), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PreduzeceDTO> getById(@PathVariable("id") Long id) {
+        if (id == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new PreduzeceDTO(predInterface.findOne(id)), HttpStatus.OK);
+    }
+
     @PostMapping(consumes = "application/json")
     public ResponseEntity<?> create(@Validated @RequestBody PreduzeceDTO preduzeceDTO, BindingResult result) {
         if (result.hasErrors()) {

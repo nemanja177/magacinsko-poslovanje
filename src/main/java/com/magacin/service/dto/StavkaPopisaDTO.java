@@ -2,6 +2,7 @@ package com.magacin.service.dto;
 
 import com.magacin.domain.Artikal;
 import com.magacin.domain.PrometniDokument;
+import com.magacin.domain.StavkaPopisa;
 
 public class StavkaPopisaDTO {
 
@@ -65,4 +66,8 @@ public class StavkaPopisaDTO {
     }
 
     public StavkaPopisaDTO() {}
+
+    public StavkaPopisaDTO(StavkaPopisa stavka) {
+        this(stavka.getId(), stavka.getKolicinaPopisa(), stavka.getKolicinaPoKnjigama(), null, null);
+    }
 }

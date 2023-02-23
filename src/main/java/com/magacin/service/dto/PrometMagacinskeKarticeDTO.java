@@ -1,6 +1,7 @@
 package com.magacin.service.dto;
 
 import com.magacin.domain.MagacinskaKartica;
+import com.magacin.domain.PrometMagacinskeKartice;
 import java.time.LocalDate;
 
 public class PrometMagacinskeKarticeDTO {
@@ -44,6 +45,19 @@ public class PrometMagacinskeKarticeDTO {
 
     public PrometMagacinskeKarticeDTO() {
         super();
+    }
+
+    public PrometMagacinskeKarticeDTO(PrometMagacinskeKartice pmk) {
+        this(
+            pmk.getId(),
+            pmk.getDatumPrometa(),
+            pmk.getKolicina(),
+            pmk.getCena(),
+            pmk.getVrednost(),
+            pmk.getDokument(),
+            pmk.getSmer(),
+            null
+        );
     }
 
     public Long getId() {

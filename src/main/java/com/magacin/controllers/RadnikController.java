@@ -3,6 +3,7 @@ package com.magacin.controllers;
 import com.magacin.domain.Radnik;
 import com.magacin.domain.StavkaPrometnogDokumenta;
 import com.magacin.service.RadnikInterface;
+import com.magacin.service.dto.PrometniDokumentDTO;
 import com.magacin.service.dto.RadnikDTO;
 import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
 import com.magacin.service.dto.support.RadnikDTOToRadnik;
@@ -43,6 +44,12 @@ public class RadnikController {
         List<Radnik> radnik = radnikInterface.findAll();
 
         return new ResponseEntity<>(toRadnikDTO.convert(radnik), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<RadnikDTO> getById(@PathVariable("id") Long id) {
+        if (id == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new RadnikDTO(radnikInterface.findOne(id)), HttpStatus.OK);
     }
 
     @PostMapping(consumes = "application/json")

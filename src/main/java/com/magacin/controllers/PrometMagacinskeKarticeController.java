@@ -45,6 +45,12 @@ public class PrometMagacinskeKarticeController {
         return new ResponseEntity<>(toPmkDTO.convert(pmk), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PrometMagacinskeKarticeDTO> getById(@PathVariable("id") Long id) {
+        if (id == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new PrometMagacinskeKarticeDTO(pmkInterface.findOne(id)), HttpStatus.OK);
+    }
+
     @PostMapping(consumes = "application/json")
     public ResponseEntity<?> create(@Validated @RequestBody PrometMagacinskeKarticeDTO preduzeceDTO, BindingResult result) {
         if (result.hasErrors()) {

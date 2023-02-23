@@ -2,6 +2,7 @@ package com.magacin.controllers;
 
 import com.magacin.domain.PrometniDokument;
 import com.magacin.service.PrometniDokumentInterface;
+import com.magacin.service.dto.PrometMagacinskeKarticeDTO;
 import com.magacin.service.dto.PrometniDokumentDTO;
 import com.magacin.service.dto.support.PrometniDokumentDTOToPrometniDokument;
 import com.magacin.service.dto.support.PrometniDokumentToPrometniDokumentDTO;
@@ -41,6 +42,12 @@ public class PrometniDokumentController {
         List<PrometniDokument> stavka = dokInterface.findAll();
 
         return new ResponseEntity<>(toDokumentDTO.convert(stavka), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<PrometniDokumentDTO> getById(@PathVariable("id") Long id) {
+        if (id == 0) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new PrometniDokumentDTO(dokInterface.findOne(id)), HttpStatus.OK);
     }
 
     @PostMapping(consumes = "application/json")
