@@ -19,9 +19,9 @@ public class PrometniDokumentDTO {
 
     private PoslovniPartnerDTO poslovniPartner;
 
-    private Magacin magacin;
+    private MagacinDTO magacin;
 
-    private PoslovanGodina poslovanGodina;
+    private PoslovnaGodinaDTO poslovanGodina;
 
     public PrometniDokumentDTO(
         Long id,
@@ -29,8 +29,8 @@ public class PrometniDokumentDTO {
         String vrsta,
         String status,
         PoslovniPartnerDTO poslovniPartner,
-        Magacin magacin,
-        PoslovanGodina poslovanGodina
+        MagacinDTO magacin,
+        PoslovnaGodinaDTO poslovanGodina
     ) {
         super();
         this.id = id;
@@ -90,19 +90,19 @@ public class PrometniDokumentDTO {
         this.poslovniPartner = poslovniPartner;
     }
 
-    public Magacin getMagacin() {
+    public MagacinDTO getMagacin() {
         return magacin;
     }
 
-    public void setMagacin(Magacin magacin) {
+    public void setMagacin(MagacinDTO magacin) {
         this.magacin = magacin;
     }
 
-    public PoslovanGodina getPoslovanGodina() {
+    public PoslovnaGodinaDTO getPoslovanGodina() {
         return poslovanGodina;
     }
 
-    public void setPoslovanGodina(PoslovanGodina poslovanGodina) {
+    public void setPoslovanGodina(PoslovnaGodinaDTO poslovanGodina) {
         this.poslovanGodina = poslovanGodina;
     }
 }

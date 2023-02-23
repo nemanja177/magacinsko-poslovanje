@@ -13,7 +13,7 @@ public class StavkaPopisaDTO {
 
     private Artikal artikal;
 
-    private PrometniDokument prometniDokument;
+    private PrometniDokumentDTO prometniDokument;
 
     public Long getId() {
         return id;
@@ -47,15 +47,15 @@ public class StavkaPopisaDTO {
         this.artikal = artikal;
     }
 
-    public PrometniDokument getPrometniDokument() {
+    public PrometniDokumentDTO getPrometniDokument() {
         return prometniDokument;
     }
 
-    public void setPrometniDokument(PrometniDokument prometniDokument) {
+    public void setPrometniDokument(PrometniDokumentDTO prometniDokument) {
         this.prometniDokument = prometniDokument;
     }
 
-    public StavkaPopisaDTO(Long id, Long kolicinaPopisa, Long kolicinaPoKnjigama, Artikal artikal, PrometniDokument prometniDokument) {
+    public StavkaPopisaDTO(Long id, Long kolicinaPopisa, Long kolicinaPoKnjigama, Artikal artikal, PrometniDokumentDTO prometniDokument) {
         super();
         this.id = id;
         this.kolicinaPopisa = kolicinaPopisa;

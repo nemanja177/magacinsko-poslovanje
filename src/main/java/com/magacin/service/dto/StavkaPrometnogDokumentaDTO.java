@@ -14,9 +14,9 @@ public class StavkaPrometnogDokumentaDTO {
 
     private Long vrednost;
 
-    private Popis popis;
+    private PopisDTO popis;
 
-    public StavkaPrometnogDokumentaDTO(Long id, Long kolicina, Long cena, Long vrednost, Popis popis) {
+    public StavkaPrometnogDokumentaDTO(Long id, Long kolicina, Long cena, Long vrednost, PopisDTO popis) {
         super();
         this.id = id;
         this.kolicina = kolicina;
@@ -61,11 +61,11 @@ public class StavkaPrometnogDokumentaDTO {
         this.vrednost = vrednost;
     }
 
-    public Popis getPopis() {
+    public PopisDTO getPopis() {
         return popis;
     }
 
-    public void setPopis(Popis popis) {
+    public void setPopis(PopisDTO popis) {
         this.popis = popis;
     }
 }

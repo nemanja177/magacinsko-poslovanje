@@ -18,9 +18,9 @@ public class RadnikDTO {
 
     private PreduzeceDTO preduzece;
 
-    private Magacin magacin;
+    private MagacinDTO magacin;
 
-    public RadnikDTO(Long id, String ime, String prezime, String adresa, String telefon, PreduzeceDTO preduzece, Magacin magacin) {
+    public RadnikDTO(Long id, String ime, String prezime, String adresa, String telefon, PreduzeceDTO preduzece, MagacinDTO magacin) {
         super();
         this.id = id;
         this.ime = ime;
@@ -87,11 +87,11 @@ public class RadnikDTO {
         this.preduzece = preduzece;
     }
 
-    public Magacin getMagacin() {
+    public MagacinDTO getMagacin() {
         return magacin;
     }
 
-    public void setMagacin(Magacin magacin) {
+    public void setMagacin(MagacinDTO magacin) {
         this.magacin = magacin;
     }
 }

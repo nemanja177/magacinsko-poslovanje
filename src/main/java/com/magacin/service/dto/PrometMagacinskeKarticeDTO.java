@@ -19,7 +19,7 @@ public class PrometMagacinskeKarticeDTO {
 
     private String smer;
 
-    private MagacinskaKartica magacinskaKartica;
+    private MagacinskaKarticaDTO magacinskaKartica;
 
     public PrometMagacinskeKarticeDTO(
         Long id,
@@ -29,7 +29,7 @@ public class PrometMagacinskeKarticeDTO {
         Long vrednost,
         String dokument,
         String smer,
-        MagacinskaKartica magacinskaKartica
+        MagacinskaKarticaDTO magacinskaKartica
     ) {
         super();
         this.id = id;
@@ -102,11 +102,11 @@ public class PrometMagacinskeKarticeDTO {
         this.smer = smer;
     }
 
-    public MagacinskaKartica getMagacinskaKartica() {
+    public MagacinskaKarticaDTO getMagacinskaKartica() {
         return magacinskaKartica;
     }
 
-    public void setMagacinskaKartica(MagacinskaKartica magacinskaKartica) {
+    public void setMagacinskaKartica(MagacinskaKarticaDTO magacinskaKartica) {
         this.magacinskaKartica = magacinskaKartica;
     }
 }
