@@ -10,6 +10,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ArtikalRepository extends JpaRepository<Artikal, Long> {
-    List<Artikal> findByPrometniDokument_Id(Long id);
-}
+public interface ArtikalRepository extends JpaRepository<Artikal, Long> {}

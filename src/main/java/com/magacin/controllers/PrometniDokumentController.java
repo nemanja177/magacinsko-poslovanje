@@ -1,4 +1,4 @@
-package com.magacin.controllers;
+/*package com.magacin.controllers;
 
 import com.magacin.domain.PrometniDokument;
 import com.magacin.service.PrometniDokumentInterface;
@@ -76,3 +76,4 @@ public class PrometniDokumentController {
         return new ResponseEntity(HttpStatus.OK);
     }
 }
+*/

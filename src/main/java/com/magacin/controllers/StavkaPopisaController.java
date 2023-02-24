@@ -1,4 +1,4 @@
-package com.magacin.controllers;
+/*package com.magacin.controllers;
 
 import com.magacin.domain.StavkaPopisa;
 import com.magacin.domain.StavkaPrometnogDokumenta;
@@ -78,3 +78,4 @@ public class StavkaPopisaController {
         return new ResponseEntity(HttpStatus.OK);
     }
 }
+*/

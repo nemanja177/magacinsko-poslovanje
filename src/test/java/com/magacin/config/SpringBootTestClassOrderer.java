@@ -1,4 +1,4 @@
-package com.magacin.config;
+/*package com.magacin.config;
 
 import com.magacin.IntegrationTest;
 import java.util.Comparator;
@@ -20,3 +20,4 @@ public class SpringBootTestClassOrderer implements ClassOrderer {
         return 1;
     }
 }
+*/

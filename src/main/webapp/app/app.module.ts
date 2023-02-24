@@ -23,6 +23,10 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ErrorComponent } from './layouts/error/error.component';
+import { DokumentComponent } from './components/dokument/dokument.component';
+import { RadnikComponent } from './components/radnik/radnik.component';
+import { PoslovniPartnerComponent } from './components/poslovni-partner/poslovni-partner.component';
+import { AddDokumentComponent } from './components/add-dokument/add-dokument.component';
 
 @NgModule({
   imports: [
@@ -42,7 +46,17 @@ import { ErrorComponent } from './layouts/error/error.component';
     { provide: NgbDateAdapter, useClass: NgbDateDayjsAdapter },
     httpInterceptorProviders,
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+  declarations: [
+    MainComponent,
+    NavbarComponent,
+    ErrorComponent,
+    PageRibbonComponent,
+    FooterComponent,
+    DokumentComponent,
+    RadnikComponent,
+    PoslovniPartnerComponent,
+    AddDokumentComponent,
+  ],
   bootstrap: [MainComponent],
 })
 export class AppModule {

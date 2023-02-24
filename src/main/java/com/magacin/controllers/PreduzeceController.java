@@ -1,4 +1,4 @@
-package com.magacin.controllers;
+/*package com.magacin.controllers;
 
 import com.magacin.domain.Preduzece;
 import com.magacin.service.PreduzeceInterface;
@@ -75,3 +75,4 @@ public class PreduzeceController {
         return new ResponseEntity(HttpStatus.OK);
     }
 }
+*/
