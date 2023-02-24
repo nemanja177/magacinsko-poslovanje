@@ -26,9 +26,13 @@ public class StavkaPopisa implements Serializable {
     @Column(name = "kolicina_po_knjigama")
     private Long kolicinaPoKnjigama;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "stavka_popisa")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "stavkaPropisa")
     private Set<Artikal> artikal = new HashSet<>();
-
+    
+    @ManyToOne
+    @JoinColumn(name = "popis", referencedColumnName = "id", nullable = false)
+    private Popis popis;
+    
     @ManyToOne
     @JoinColumn(name = "prometniDokumentId", referencedColumnName = "id", nullable = false)
     private PrometniDokument prometniDokument;
@@ -41,7 +45,15 @@ public class StavkaPopisa implements Serializable {
         return this.id;
     }
 
-    public Set<Artikal> getArtikal() {
+    public Popis getPopis() {
+		return popis;
+	}
+
+	public void setPopis(Popis popis) {
+		this.popis = popis;
+	}
+
+	public Set<Artikal> getArtikal() {
 		return artikal;
 	}
 
@@ -61,12 +73,13 @@ public class StavkaPopisa implements Serializable {
 		super();
 	}
 
-	public StavkaPopisa(Long kolicinaPopisa, Long kolicinaPoKnjigama, Set<Artikal> artikal,
+	public StavkaPopisa(Long kolicinaPopisa, Long kolicinaPoKnjigama, Set<Artikal> artikal, Popis popis,
 			PrometniDokument prometniDokument) {
 		super();
 		this.kolicinaPopisa = kolicinaPopisa;
 		this.kolicinaPoKnjigama = kolicinaPoKnjigama;
 		this.artikal = artikal;
+		this.popis = popis;
 		this.prometniDokument = prometniDokument;
 	}
 

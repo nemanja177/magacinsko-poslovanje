@@ -45,7 +45,7 @@ public class PrometniDokument implements Serializable {
     @JoinColumn(name = "poslovnaGodinaId", referencedColumnName = "id", nullable = false)
     private PoslovanGodina poslovnaGodina;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "prometni_dokument")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "prometniDokument")
     private Set<StavkaPrometnogDokumenta> stavkaDokumenta = new HashSet<>();
     
     

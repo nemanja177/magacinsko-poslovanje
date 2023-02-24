@@ -29,32 +29,46 @@ public class StavkaPrometnogDokumenta implements Serializable {
     @Column(name = "vrednost")
     private Long vrednost;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "stavka_prometnog_dokumenta")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "stavakaDokumenta")
     private Set<Artikal> artikal = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "popisId", referencedColumnName = "id", nullable = false)
     private Popis popis;
     
-    
+    @ManyToOne
+    @JoinColumn(name = "prometniDokument", referencedColumnName = "id", nullable = false)
+    private PrometniDokument prometniDokument;
 
     public StavkaPrometnogDokumenta() {
 		super();
 	}
 
-	public StavkaPrometnogDokumenta(Long kolicina, Long cena, Long vrednost, Set<Artikal> artikal, Popis popis) {
+	public StavkaPrometnogDokumenta(Long kolicina, Long cena, Long vrednost, Set<Artikal> artikal, Popis popis,
+			PrometniDokument prometniDokument) {
 		super();
 		this.kolicina = kolicina;
 		this.cena = cena;
 		this.vrednost = vrednost;
 		this.artikal = artikal;
 		this.popis = popis;
+		this.prometniDokument = prometniDokument;
 	}
 
 	// jhipster-needle-entity-add-field - JHipster will add fields here
+	
+	
 
     public Set<Artikal> getArtikal() {
 		return artikal;
+	}
+
+	public PrometniDokument getPrometniDokument() {
+		return prometniDokument;
+	}
+
+	public void setPrometniDokument(PrometniDokument prometniDokument) {
+		this.prometniDokument = prometniDokument;
 	}
 
 	public void setArtikal(Set<Artikal> artikal) {

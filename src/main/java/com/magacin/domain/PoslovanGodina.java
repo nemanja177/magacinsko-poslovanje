@@ -26,13 +26,13 @@ public class PoslovanGodina implements Serializable {
     @Column(name = "zakljucena")
     private Boolean zakljucena;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovan_godina")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovanGodina")
     private Set<Popis> popis = new HashSet<>();
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovan_godina")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovnaGodina")
     private Set<MagacinskaKartica> magacinskaKartica = new HashSet<>();
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovan_godina")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "poslovnaGodina")
     private Set<PrometniDokument> prometniDokument = new HashSet<>();
 
     @ManyToOne

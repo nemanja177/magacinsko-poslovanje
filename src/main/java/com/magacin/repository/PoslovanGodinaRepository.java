@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * Spring Data JPA repository for the PoslovanGodina entity.
  */
-@SuppressWarnings("unused")
 @Repository
-public interface PoslovanGodinaRepository extends JpaRepository<PoslovanGodina, Long> {}
+public interface PoslovanGodinaRepository extends JpaRepository<PoslovanGodina, Long> {
+	
+	PoslovanGodina findPoslovanGodinaById(Long id);
+	
+}

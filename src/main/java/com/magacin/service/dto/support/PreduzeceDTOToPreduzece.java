@@ -7,7 +7,6 @@ import org.springframework.core.convert.converter.Converter;
 
 public class PreduzeceDTOToPreduzece implements Converter<PreduzeceDTO, Preduzece> {
 
-    @Autowired
     @Override
     public Preduzece convert(PreduzeceDTO preduzeceDto) {
         Preduzece preduzece = new Preduzece();

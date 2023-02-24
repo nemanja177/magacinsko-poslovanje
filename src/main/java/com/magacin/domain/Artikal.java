@@ -30,7 +30,7 @@ public class Artikal implements Serializable {
     private String pakovanje;
 
     @ManyToOne
-    @JoinColumn(name = "magacinksaKarticaId", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "magacinska_kartica", referencedColumnName = "id", nullable = false)
     private MagacinskaKartica magacinskaKarticaId;
 
     @ManyToOne

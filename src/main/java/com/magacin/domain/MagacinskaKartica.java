@@ -52,10 +52,10 @@ public class MagacinskaKartica implements Serializable {
     @JoinColumn(name = "poslovnaGodinaId", referencedColumnName = "id", nullable = false)
     private PoslovanGodina poslovnaGodina;
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "magacinska_kartica")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "magacinskaKarticaId")
     private Set<Artikal> artikal = new HashSet<>();
 
-    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "magacinska_kartica")
+    @OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "magacinskaKartica")
     private Set<PrometMagacinskeKartice> prometMagacinskeKaritce = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
