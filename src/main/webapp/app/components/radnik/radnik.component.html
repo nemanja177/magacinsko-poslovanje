@@ -1,1 +1,21 @@
-<p>radnik works!</p>
+<table id="dokument-table">
+  <tr>
+    <th>Ime</th>
+    <th>Prezime</th>
+    <th>Adresa</th>
+    <th>Telefon</th>
+  </tr>
+  <tr *ngFor="let d of radnici">
+    <td>{{ d.ime }}</td>
+    <td>{{ d.prezime }}</td>
+    <td>{{ d.adresa }}</td>
+    <td>{{ d.telefon }}</td>
+    <td>
+      <button style="margin-left: 5px" class="btn btn-info" (click)="updateRadnik(d.id)">Update</button>
+      <button style="margin-left: 5px" class="btn btn-danger" (click)="blockRadnik(d.id)">Block</button>
+    </td>
+  </tr>
+</table>
+<div style="margin: 10px auto; width: 1%">
+  <button class="btn btn-primary" (click)="createRadnik()">Add</button>
+</div>

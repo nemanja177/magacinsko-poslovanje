@@ -9,10 +9,14 @@ import { Authority } from 'app/config/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
 import { DokumentComponent } from '../app/components/dokument/dokument.component';
 import { AddDokumentComponent } from '../app/components/add-dokument/add-dokument.component';
+import { RadnikComponent } from './entities/radnik/list/radnik.component';
+import { AddRadnikComponent } from '../app/components/add-radnik/add-radnik.component';
 
 const routes: Routes = [
   { path: 'dokumenti', component: DokumentComponent },
-  { path: 'updateDokument/:id', component: AddDokumentComponent },
+  { path: 'createDokument', component: AddDokumentComponent },
+  { path: 'radnici', component: RadnikComponent },
+  { path: 'createRadnik', component: AddRadnikComponent },
 ];
 
 @NgModule({

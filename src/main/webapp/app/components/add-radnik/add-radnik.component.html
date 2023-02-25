@@ -1,0 +1,22 @@
+<div class="card col-md-6 offset-md-3">
+  <h3>Create Radnik</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Ime</label>
+      <input type="text" class="form-control" [(ngModel)]="radnik.ime" id="ime" required name="name" />
+    </div>
+    <div class="form-group">
+      <label for="name">Prezime</label>
+      <input type="text" class="form-control" [(ngModel)]="radnik.prezime" id="prezime" required name="numberOfStudents" />
+    </div>
+    <div class="form-group">
+      <label for="name">Adresa</label>
+      <input type="text" class="form-control" [(ngModel)]="radnik.adresa" id="adresa" required name="name" />
+    </div>
+    <div class="form-group">
+      <label for="name">Telefon</label>
+      <input type="text" class="form-control" [(ngModel)]="radnik.telefon" id="telefon" required name="name" />
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

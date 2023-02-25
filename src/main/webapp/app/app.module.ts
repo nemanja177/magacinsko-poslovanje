@@ -27,6 +27,7 @@ import { DokumentComponent } from './components/dokument/dokument.component';
 import { RadnikComponent } from './components/radnik/radnik.component';
 import { PoslovniPartnerComponent } from './components/poslovni-partner/poslovni-partner.component';
 import { AddDokumentComponent } from './components/add-dokument/add-dokument.component';
+import { AddRadnikComponent } from './components/add-radnik/add-radnik.component';
 
 @NgModule({
   imports: [
@@ -56,6 +57,7 @@ import { AddDokumentComponent } from './components/add-dokument/add-dokument.com
     RadnikComponent,
     PoslovniPartnerComponent,
     AddDokumentComponent,
+    AddRadnikComponent,
   ],
   bootstrap: [MainComponent],
 })
