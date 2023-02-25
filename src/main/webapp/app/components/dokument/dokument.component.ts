@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Dokument } from '../../models/dokument';
+import { DokumentService } from '../../services/dokument.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'jhi-dokument',
@@ -6,24 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dokument.component.scss'],
 })
 export class DokumentComponent implements OnInit {
-  route: any;
-  documentID;
-  document;
-  documentItems;
-  constructor() {}
+  dokumenti: Dokument[] = [];
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.documentID = params['id'];
-      console.log(this.documentID);
+  constructor(private dokumentService: DokumentService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.dokumentService.getDokument().subscribe(dokumenti => {
+      this.dokumenti = dokumenti;
+      console.log(dokumenti[0]);
     });
   }
 
-  showDocumentItem() {
-    document.getElementById('documentItem').style.display = 'block';
+  public updateDokument(id: number) {
+    this.router.navigate(['updateDokument', id]);
   }
 
-  closeDocumentItem() {
-    document.getElementById('documentItem').style.display = 'none';
+  public createDokument() {
+    this.router.navigate(['createDokument']);
+  }
+
+  public blockDokument(id: number) {
+    console.log(id);
+    let response = this.dokumentService.blockDokument(id);
+    response.subscribe(dokumenti => (this.dokumenti = dokumenti));
   }
 }

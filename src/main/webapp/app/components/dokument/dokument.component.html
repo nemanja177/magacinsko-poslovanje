@@ -1,73 +1,21 @@
-<div id="bImage">
-  <div id="documentItem" (click)="closeDocumentItem()">
-    <div class="container-fluid col-md-8" id="cont">
-      <p id="itemTitle">Document item</p>
-      <table class="table" id="table">
-        <thead id="header">
-          <tr>
-            <th scope="col">Article id</th>
-            <th scope="col">Article naziv</th>
-            <th scope="col">Kolicina</th>
-            <th scope="col">Cena</th>
-            <th scope="col">Vrednost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of documentItems">
-            <th scope="row">{{ item.articleId }}</th>
-            <td>{{ item.nazic }}</td>
-            <td>{{ item.kolicina | number: '.0' }}</td>
-            <td>{{ item.price | number: '.2-2' }}</td>
-            <td>{{ item.kolicina * item.cena | number: '.2-2' }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div class="container-fluid col-md-8" id="ll">
-    <div class="main">
-      <p id="document">Document</p>
-      <button id="button" (click)="showDocumentItem()">Document item</button>
-      <div class="container-fluid col-md-8">
-        <p id="bYear">Godina poslovanja:</p>
-        <input value="{{ document.godinaPoslovanja.datum }}" id="yearInput" readonly />
-        <p id="number">Document number:</p>
-        <input value="{{ document.id }}" id="numberInput" readonly />
-
-        <div>
-          <p id="date">Date:</p>
-          <input value="{{ document.createDate | date: 'dd.MM.yyyy' }}" id="dateInput" readonly />
-          <p id="documentType">Type of document:</p>
-          <input value="{{ document.type }}" id="typeInput" readonly />
-        </div>
-
-        <div>
-          <p id="warehous">Warehouse</p>
-          <p id="code">Code warehouse:</p>
-          <input value="{{ document.warehouse.id }}" id="codeInput" readonly />
-          <div>
-            <p id="nameWarehouse">Name of the warehouse:</p>
-            <input value="{{ document.warehouse.name }}" id="nameInput" readonly />
-          </div>
-        </div>
-
-        <div id="businessPartner">
-          <p id="partner">Business partner</p>
-          <p id="namePartner">Partner name:</p>
-          <input value="{{ document.businessPartner.name }}" id="partnerNameInput" readonly />
-          <div>
-            <p id="typePartner">Type of partner:</p>
-            <input value="{{ document.businessPartner.partnerType }}" id="patrnerInput" readonly />
-          </div>
-        </div>
-        <div id="divStatus">
-          <p id="status">Status:</p>
-          <input value="{{ document.status }}" id="statusInput" readonly />
-        </div>
-        <div>
-          <button class="btn btn-secondary" id="buttonStorno" *ngIf="document.status == 'Proknjizeno'" (click)="cancel()">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<table id="dokument-table">
+  <tr>
+    <th>Broj dokumenata</th>
+    <th>Datum</th>
+    <th>Vrsta</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let d of dokumenti">
+    <td>{{ d.brojDokumentata }}</td>
+    <td>{{ d.datum }}</td>
+    <td>{{ d.vrsta }}</td>
+    <td>{{ d.status }}</td>
+    <td>
+      <button style="margin-left: 5px" class="btn btn-info" (click)="updateDokument(d.id)">Update</button>
+      <button style="margin-left: 5px" class="btn btn-danger" (click)="blockDokument(d.id)">Block</button>
+    </td>
+  </tr>
+</table>
+<div style="margin: 10px auto; width: 1%">
+  <button class="btn btn-primary" (click)="createDokument()">Add</button>
 </div>
