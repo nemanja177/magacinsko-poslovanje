@@ -6,7 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dokument.component.scss'],
 })
 export class DokumentComponent implements OnInit {
+  route: any;
+  documentID;
+  document;
+  documentItems;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.documentID = params['id'];
+      console.log(this.documentID);
+    });
+  }
+
+  showDocumentItem() {
+    document.getElementById('documentItem').style.display = 'block';
+  }
+
+  closeDocumentItem() {
+    document.getElementById('documentItem').style.display = 'none';
+  }
 }
