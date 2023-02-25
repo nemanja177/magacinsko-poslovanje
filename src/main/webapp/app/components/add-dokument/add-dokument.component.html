@@ -1,1 +1,22 @@
-<p>add-dokument works!</p>
+<div class="card col-md-6 offset-md-3">
+  <h3>Create Dokument</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Broj dokumenata</label>
+      <input type="text" class="form-control" [(ngModel)]="dokument.brojDokumentata" id="brojDokumentata" required name="name" />
+    </div>
+    <div class="form-group">
+      <label for="name">Datum</label>
+      <input type="text" class="form-control" [(ngModel)]="dokument.datum" id="datum" required name="numberOfStudents" />
+    </div>
+    <div class="form-group">
+      <label for="name">Vrsta</label>
+      <input type="text" class="form-control" [(ngModel)]="dokument.vrsta" id="vrsta" required name="name" />
+    </div>
+    <div class="form-group">
+      <label for="name">Status</label>
+      <input type="text" class="form-control" [(ngModel)]="dokument.status" id="status" required name="name" />
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
