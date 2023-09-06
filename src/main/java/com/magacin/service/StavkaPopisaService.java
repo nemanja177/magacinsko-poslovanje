@@ -4,7 +4,9 @@ import com.magacin.domain.StavkaPopisa;
 import com.magacin.repository.StavkaPopisaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StavkaPopisaService implements StavkaPopisaInterface {
 
     @Autowired

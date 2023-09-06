@@ -9,4 +9,8 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface PreduzeceRepository extends JpaRepository<Preduzece, Long> {}
+public interface PreduzeceRepository extends JpaRepository<Preduzece, Long> {
+    Preduzece findByNaziv(String name);
+
+    Preduzece getOne(Integer id);
+}

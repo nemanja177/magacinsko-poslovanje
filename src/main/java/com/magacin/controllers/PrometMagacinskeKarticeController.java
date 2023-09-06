@@ -1,4 +1,4 @@
-/*package com.magacin.controllers;
+package com.magacin.controllers;
 
 import com.magacin.domain.Preduzece;
 import com.magacin.domain.PrometMagacinskeKartice;
@@ -80,4 +80,3 @@ public class PrometMagacinskeKarticeController {
         return new ResponseEntity(HttpStatus.OK);
     }
 }
-*/

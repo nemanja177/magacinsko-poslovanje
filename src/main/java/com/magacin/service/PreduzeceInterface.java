@@ -12,5 +12,7 @@ public interface PreduzeceInterface {
 
     Preduzece save(Preduzece entity);
 
+    Preduzece findByName(String name);
+
     void delete(Long id);
 }

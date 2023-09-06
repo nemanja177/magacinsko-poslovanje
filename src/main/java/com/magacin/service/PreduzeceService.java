@@ -4,7 +4,9 @@ import com.magacin.domain.Preduzece;
 import com.magacin.repository.PreduzeceRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PreduzeceService implements PreduzeceInterface {
 
     @Autowired
@@ -23,6 +25,11 @@ public class PreduzeceService implements PreduzeceInterface {
     @Override
     public Preduzece save(Preduzece entity) {
         return predRep.save(entity);
+    }
+
+    @Override
+    public Preduzece findByName(String name) {
+        return predRep.findByNaziv(name);
     }
 
     @Override

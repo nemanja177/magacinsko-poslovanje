@@ -4,7 +4,9 @@ import com.magacin.domain.PrometMagacinskeKartice;
 import com.magacin.repository.PrometMagacinskeKarticeRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PrometMagacinskeKarticeService implements PrometMagacinskeKarticeInterface {
 
     @Autowired
