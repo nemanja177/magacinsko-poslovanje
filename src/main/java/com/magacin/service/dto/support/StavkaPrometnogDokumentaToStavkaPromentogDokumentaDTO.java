@@ -1,11 +1,14 @@
 package com.magacin.service.dto.support;
 
 import com.magacin.domain.StavkaPrometnogDokumenta;
+import com.magacin.service.dto.PopisDTO;
 import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StavkaPrometnogDokumentaToStavkaPromentogDokumentaDTO
     implements Converter<StavkaPrometnogDokumenta, StavkaPrometnogDokumentaDTO> {
 
@@ -16,7 +19,7 @@ public class StavkaPrometnogDokumentaToStavkaPromentogDokumentaDTO
         stDTO.setCena(stavkaDokumenta.getCena());
         stDTO.setKolicina(stavkaDokumenta.getKolicina());
         stDTO.setVrednost(stavkaDokumenta.getVrednost());
-        //stDTO.setPopis(new PopisDTO(stavkaDokumenta.getPopis()));
+        stDTO.setPopis(new PopisDTO(stavkaDokumenta.getPopis()));
         return stDTO;
     }
 

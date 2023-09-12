@@ -4,10 +4,11 @@ import com.magacin.domain.Radnik;
 import com.magacin.service.dto.RadnikDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RadnikDTOToRadnik implements Converter<RadnikDTO, Radnik> {
 
-    @Autowired
     @Override
     public Radnik convert(RadnikDTO radnikDTO) {
         Radnik radnik = new Radnik();

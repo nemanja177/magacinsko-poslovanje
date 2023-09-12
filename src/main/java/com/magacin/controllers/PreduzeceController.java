@@ -27,10 +27,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 public class PreduzeceController {
 
+    @Autowired
     private PreduzeceDTOToPreduzece toPreduzece;
 
+    @Autowired
     private PreduzeceToPreduzeceDTO toPreduzeceDTO;
 
+    @Autowired
     private PreduzeceInterface predInterface;
 
     @GetMapping

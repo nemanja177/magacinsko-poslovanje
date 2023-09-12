@@ -7,7 +7,9 @@ import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PrometMagacinskeKarticeToPrometMagacinskeKarticeDTO implements Converter<PrometMagacinskeKartice, PrometMagacinskeKarticeDTO> {
 
     @Override

@@ -5,7 +5,9 @@ import com.magacin.service.dto.StavkaPopisaDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StavkaPopisaToStavkaPopisaDTO implements Converter<StavkaPopisa, StavkaPopisaDTO> {
 
     @Override

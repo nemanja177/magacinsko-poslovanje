@@ -5,7 +5,9 @@ import com.magacin.service.dto.PreduzeceDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PreduzeceToPreduzeceDTO implements Converter<Preduzece, PreduzeceDTO> {
 
     @Override

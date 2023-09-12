@@ -8,7 +8,9 @@ import com.magacin.service.PopisInterface;
 import com.magacin.service.dto.StavkaPrometnogDokumentaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StavkaPrometnogDokumentaDTOtoStavkaPrometnogDokumenta
     implements Converter<StavkaPrometnogDokumentaDTO, StavkaPrometnogDokumenta> {
 

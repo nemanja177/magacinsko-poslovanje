@@ -6,7 +6,9 @@ import com.magacin.service.dto.RadnikDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RadnikToRadnikDTO implements Converter<Radnik, RadnikDTO> {
 
     @Override

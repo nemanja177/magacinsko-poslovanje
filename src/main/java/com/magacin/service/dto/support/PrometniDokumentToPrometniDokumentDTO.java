@@ -6,7 +6,9 @@ import com.magacin.service.dto.PrometniDokumentDTO;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PrometniDokumentToPrometniDokumentDTO implements Converter<PrometniDokument, PrometniDokumentDTO> {
 
     @Override

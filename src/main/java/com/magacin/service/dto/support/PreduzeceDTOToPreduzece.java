@@ -4,7 +4,9 @@ import com.magacin.domain.Preduzece;
 import com.magacin.service.dto.PreduzeceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PreduzeceDTOToPreduzece implements Converter<PreduzeceDTO, Preduzece> {
 
     @Override

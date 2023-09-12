@@ -4,10 +4,11 @@ import com.magacin.domain.PrometniDokument;
 import com.magacin.service.dto.PrometniDokumentDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PrometniDokumentDTOToPrometniDokument implements Converter<PrometniDokumentDTO, PrometniDokument> {
 
-    @Autowired
     @Override
     public PrometniDokument convert(PrometniDokumentDTO dokumentDTO) {
         PrometniDokument dokumetn = new PrometniDokument();
